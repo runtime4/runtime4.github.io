@@ -86,30 +86,25 @@ c = float(input("Enter third number: "))
 
 greatest = max(a, b, c)
 
-print("The greatest number is:", greatest)`
+print(${Math.random() < 0.5 ? '"The greatest number is:"' : '"The maximum number is:"'}, greatest)`
             },
             {
                 id: 'character-classifier',
                 name: 'Character Classifier',
-                code: `while True:
-    input_char = input("Enter a single character: ")
-
-    if len(input_char) == 1:
-        break
-    print("Please enter exactly one character.")
+                code: `input_char = input("Enter a ${Math.random() < 0.25 ? 'character' : 'letter or symbol'}: ")
 
 if input_char.isupper():
-    print("The character is an uppercase letter.")
+    print("It is an uppercase letter.")
 elif input_char.islower():
-    print("The character is a lowercase letter.")
+    print("It is a lowercase letter.")
 else:
-    print("The character is a special character or a digit.")`,
+    print("It is a ${Math.random() < 0.25 ? 'special character' : 'symbol'} or a ${Math.random() < 0.2 ? 'digit' : 'number'}.")`,
 
             },
             {
                 id: 'electricity-bill',
                 name: 'Generating Electricity Bill',
-                code: `units = float(input("Please enter the number of units you consumed in a month: "))
+                code: `units = float(input("Enter the number of units consumed in a month: "))
 
 if units <= 100:
     pay_amount = units * 1.5
