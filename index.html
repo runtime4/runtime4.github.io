@@ -355,11 +355,19 @@ for i in range(rows, 0, -1):
             }
         }
 
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'q') {
-                restoreOriginalPage();
-            }
-        });
+	let pressedQ = false;
+	let pressed4 = false;
+
+	document.addEventListener('keydown', function(event) {
+    		if (event.key === 'q') pressedQ = true;
+    		if (event.key === '4') pressed4 = true;
+
+    		if (pressedQ && pressed4) {
+        		restoreOriginalPage();
+        		pressedQ = false;
+        		pressed4 = false; // reset so it doesn’t auto-trigger again
+    		}
+	});
     </script>
   </body>
 </html>
